@@ -17,10 +17,14 @@ formEl.addEventListener('submit', e => {
   for (let i = 0; i < formEl.elements.amount.value; i++) {
     createPromise(i, delayy)
       .then(({ position, delay }) => {
-        console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+        setTimeout(() => {
+          console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+        }, delay);
       })
       .catch(({ position, delay }) => {
-        console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+        setTimeout(() => {
+          console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+        }, delay);
       });
 
     delayy += step;
