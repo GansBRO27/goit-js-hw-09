@@ -15,7 +15,7 @@ formEl.addEventListener('submit', e => {
   let step = Number(formEl.elements.step.value);
   let delayy = Number(formEl.elements.delay.value);
   for (let i = 0; i < formEl.elements.amount.value; i++) {
-    createPromise(i, delayy)
+    createPromise(i+1, delayy)
       .then(({ position, delay }) => {
         setTimeout(() => {
           console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
